@@ -97,9 +97,12 @@ i {
   /* background-color: aqua; */
   width: 100%;
   height: 91%;
-  align-self: center;
   border-radius: 20px;
   display: flex;
+  flex-wrap: wrap;
+  /* border: solid black 1px; */
+  justify-content: center;
+  position: relative;
 }
 
 .addtask {
@@ -112,11 +115,13 @@ i {
   display: flex;
   align-items: center;
   gap: 20px;
+  cursor: pointer;
+  /* visibility:hidden */
 }
 .menu {
   width: 35px;
   height: 35px;
-  /* background-color: white; */
+  /* background-color: blue; */
   margin: 7px;
   border-radius: 20px;
   display: flex;
@@ -138,4 +143,167 @@ i {
 
 .menu:hover {
   background-color: rgba(226, 226, 226, 0.5);
+}
+
+#taskimg {
+  width: 250px;
+  height: 200px;
+  /* align-self: center; */
+  opacity: 0.3;
+  position: absolute;
+  top: 120px;
+  justify-self: center;
+}
+
+.content {
+  /* border: solid 1px black; */
+  width: 100%;
+  height: calc(96% - 23px);
+  /* background-color: white; */
+  border-radius: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 5px;
+  position: relative;
+}
+
+.ti-div {
+  position: absolute;
+  top: 0;
+  left: 50;
+  width: 70%;
+  height: 40px;
+  /* background-color: #1a73e8; */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+  margin-top: 10px;
+  visibility: hidden;
+}
+
+.inputbox {
+  height: 40px;
+  width: 82%;
+  margin-left: 5px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid;
+  border-color: rgb(236, 234, 234);
+}
+
+.button {
+  height: 40px;
+  width: 12%;
+  font-size: 12px;
+  background-color: #1a73e8;
+  border-radius: 20px;
+  scale: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.inputbox::placeholder {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+
+.ttc {
+  width: 100%;
+  height: 50%;
+  /* border: solid red 1px; */
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.ct {
+  width: 100%;
+  height: 50%;
+  /* border: solid blue 1px; */
+  border-radius: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  font-size: 12px;
+  margin: 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: black;
+  margin-left: 25px;
+}
+
+.hidden:hover {
+  color: #1a73e8;
+}
+
+.list-class {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.25px;
+  list-style-type: none;
+  display: flex;
+  /* background-color: #1a73e8; */
+  align-items: center;
+  width: auto;
+}
+
+.list-class span {
+  margin-left: 5px;
+}
+.list-class input {
+  margin-top: 2px;
+}
+
+.clone-item {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.25px;
+  list-style-type: none;
+  display: flex;
+  /* background-color: #1a73e8; */
+  align-items: center;
+  width: auto;
+}
+
+.clone-item span {
+  margin-left: 5px;
+}
+.clone-item input[type="checkbox"] {
+  margin-top: 2px;
+  accent-color: green;
+}
+
+.hidden2 {
+  display: none;
+}
+
+.allcompleted {
+  letter-spacing: 0.2px;
+  top: 330px;
+  position: absolute;
+  justify-self: center;
+}
+
+.nicework {
+  position: absolute;
+  top: 360px;
+  opacity: 0.8;
+  justify-self: center;
+}
+
+.button i {
+  color: white;
+  font-size: 22px;
 }
