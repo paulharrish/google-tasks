@@ -82,12 +82,46 @@ let obj = {
             {
               type: "div",
               class: "menu",
+              id: "menu",
               child: [
                 {
                   type: "i",
                   class: "fa-solid",
                   class2: "fa-ellipsis-vertical",
                   id: "img4",
+                },
+              ],
+            },
+            {
+              type: "div",
+              class: "popup_hidden",
+              id: "popup",
+              child: [
+                {
+                  type: "div",
+                  class: "elmnt1",
+                  id: "elmnt1",
+                  child: [
+                    {
+                      type: "span",
+                      class: "opn1",
+                      text: "Clear All",
+                      id: "opn1",
+                    },
+                  ],
+                },
+                {
+                  type: "div",
+                  class: "elmnt2",
+                  id: "elmnt2",
+                  child: [
+                    {
+                      type: "span",
+                      class: "opn2",
+                      text: "Show completed Tasks",
+                      id: "opn2",
+                    },
+                  ],
                 },
               ],
             },

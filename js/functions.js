@@ -40,7 +40,7 @@ function addTask() {
 }
 
 tskbox.addEventListener("click", (e) => {
-    e.preventDefault();
+  e.preventDefault();
   myfunc();
   document.getElementById("notask").className = "hidden2";
   document.getElementById("allcompleted").className = "hidden2";
@@ -75,7 +75,7 @@ function moveToCompleted(item) {
   console.log(taskList.childNodes.length);
   let clonedTaskItem = item.cloneNode(true);
   let checkbox2 = clonedTaskItem.querySelector("input[type='checkbox']");
-  checkbox2.disabled = false;
+  checkbox2.disabled = true;
   completedTaskList.appendChild(clonedTaskItem);
   clonedTaskItem.className = "clone-item";
   if (document.getElementById("taskList").childNodes.length === 0) {
@@ -86,3 +86,19 @@ function moveToCompleted(item) {
     document.getElementById("nicework").className = "nicework";
   }
 }
+const menubtn = document.getElementById("menu");
+const menudiv = document.getElementById("popup");
+menubtn.addEventListener("click", () => {
+  popup_down();
+});
+
+function popup_down() {
+  menudiv.className = "popup";
+}
+
+document.addEventListener("click", (event) => {
+  if (event.target !== menubtn && !menudiv.contains(event.target)) {
+    menudiv.classList.remove("popup");
+    menudiv.classList.add("popup_hidden");
+  }
+});

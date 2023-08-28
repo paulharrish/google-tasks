@@ -307,3 +307,65 @@ i {
   color: white;
   font-size: 22px;
 }
+
+.popup_hidden {
+  background-color: white;
+  box-shadow: 0.5px 0.5px 5px grey;
+  width: 130px;
+  height: 100px;
+  position: absolute;
+  left: 350px;
+  margin-top: 7px;
+  /* border-radius: 5px; */
+  display: none;
+}
+
+.popup {
+  background-color: white;
+  box-shadow: 0.5px 0.5px 5px grey;
+  width: 130px;
+  height: 100px;
+  position: absolute;
+  left: 310px;
+  margin-top: 7px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  justify-content: space-around;
+  gap: 5px;
+}
+
+.elmnt1 {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.elmnt2 {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.elmnt1:hover {
+  background-color: aliceblue;
+}
+.elmnt2:hover {
+  background-color: aliceblue;
+}
+
+.opn1 {
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.opn2 {
+  font-size: 14px;
+  margin-left: 10px;
+  word-wrap: break-word;
+  word-break: normal;
+}
