@@ -1,18 +1,23 @@
-let tskbox = document.getElementById("addtask");
-let inpbox = document.getElementById("ti-div");
+const tskbox = document.getElementById("addtask");
+const inpbox = document.getElementById("ti-div");
 const taskList = document.getElementById("taskList");
 const tasksToBeCompletedHeading = document.getElementById(
   "tasksToBeCompletedHeading"
 );
-let completedtaskheading = document.getElementById("completedtaskheading");
-let ttc = document.getElementById("ttc");
-let taskInput = document.getElementById("taskInput");
+const completedtaskheading = document.getElementById("completedtaskheading");
+const ttc = document.getElementById("ttc");
+const taskInput = document.getElementById("taskInput");
+const addbutton = document.getElementById("addbutton");
+const menubtn = document.getElementById("menu");
+const menudiv = document.getElementById("popup");
+const menuicon = document.getElementById("img4");
+const closeall = document.getElementById("elmnt1");
+const show_completed_tasks = document.getElementById("elmnt2");
 
 function addTask() {
-  let description = taskInput.value;
+  const description = taskInput.value;
   if (description == "") {
-    alert("Please enter the task description");
-    document.getElementById("notask").className = "allcompleted";
+    document.getElementById("enter_description").style.visibility = "visible";
   } else {
     tasksToBeCompletedHeading.classList.remove("hidden");
     tasksToBeCompletedHeading.classList.add("visible");
@@ -41,25 +46,27 @@ function addTask() {
 
 tskbox.addEventListener("click", (e) => {
   e.preventDefault();
-  myfunc();
+  show_taskinputbox();
   document.getElementById("notask").className = "hidden2";
   document.getElementById("allcompleted").className = "hidden2";
   document.getElementById("nicework").className = "hidden2";
 });
 
-function myfunc() {
+function show_taskinputbox() {
   tskbox.style.opacity = "0";
   inpbox.style.visibility = "visible";
+  completedTaskList.style.visibility = "hidden";
+  completedtaskheading.classList.add("hidden");
+  completedtaskheading.classList.remove("visible");
+  document.getElementById("enter_description").style.visibility = "hidden";
 }
 
-let addbutton = document.getElementById("addbutton");
-
 addbutton.addEventListener("click", () => {
-  func2();
+  close_taskinputbox();
   addTask();
 });
 
-function func2() {
+function close_taskinputbox() {
   tskbox.style.opacity = "1";
   inpbox.style.visibility = "hidden";
 }
@@ -81,14 +88,16 @@ function moveToCompleted(item) {
   if (document.getElementById("taskList").childNodes.length === 0) {
     tasksToBeCompletedHeading.classList.add("hidden");
     completedtaskheading.classList.add("hidden");
-    $("#completedTaskList").empty();
+    completedTaskList.style.visibility = "hidden";
     document.getElementById("allcompleted").className = "allcompleted";
     document.getElementById("nicework").className = "nicework";
   }
 }
-const menubtn = document.getElementById("menu");
-const menudiv = document.getElementById("popup");
+
 menubtn.addEventListener("click", () => {
+  popup_down();
+});
+menuicon.addEventListener("click", () => {
   popup_down();
 });
 
@@ -101,4 +110,24 @@ document.addEventListener("click", (event) => {
     menudiv.classList.remove("popup");
     menudiv.classList.add("popup_hidden");
   }
+});
+
+closeall.addEventListener("click", () => {
+  tasksToBeCompletedHeading.classList.add("hidden");
+  completedtaskheading.classList.add("hidden");
+  $("#taskList").empty();
+  $("#completedTaskList").empty();
+  document.getElementById("notask").className = "allcompleted";
+  menudiv.className = "popup_hidden";
+});
+
+show_completed_tasks.addEventListener("click", () => {
+  completedTaskList.style.visibility = "visible";
+  completedtaskheading.classList.remove("hidden");
+  completedtaskheading.classList.add("visible");
+  document.getElementById("allcompleted").className = "hidden2";
+  document.getElementById("nicework").className = "hidden2";
+  menudiv.className = "popup_hidden";
+  document.getElementById("notask").className = "hidden";
+  document.getElementById("enter_description").style.visibility = "hidden";
 });
